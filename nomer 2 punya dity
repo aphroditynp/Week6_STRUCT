@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct student{
+    int student_id;
+    double midterm_score;
+    double finalexam_score;
+};
+
+student data[50];
+int main()
+{
+    int n;
+    double mean [50];
+    
+    cout << "insert the number of student: ";
+    cin >> n;
+    
+    cout << "=== STUDENTS DATA ===\n\n";
+    for (int i = 0; i < n; i++){
+        cout << "insert the data of student " << i + 1 << endl;
+        cout << "Student ID: ";
+        cin >> data[i].student_id;
+        cout << "Midterm exam score: ";
+        cin >> data[i].midterm_score;
+        cout << "Final exam score: ";
+        cin >> data[i].finalexam_score;
+        cout <<endl <<endl;
+        mean [i] = (data[i].midterm_score + data[i].finalexam_score) / 2;
+    }
+    
+    cout << "STUDENT EXAM AVERAGE SCORE\n\n";
+    
+    for (int i = 0; i < n; i++){
+        cout << "Student ID: " << data[i].student_id;
+        cout << "\nAverage exam score: " << mean[i] <<endl <<endl;
+    }
+        
+    return 0;
+}
